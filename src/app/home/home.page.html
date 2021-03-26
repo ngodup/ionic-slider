@@ -1,20 +1,33 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <!-- <ion-toolbar>
+    <ion-buttons slot="end">
+      <ion-button color="dark" [routerLink]="['/slides-pager']" routerLinkActive="router-link-active" fill="clear">
+        Slider Page
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar> -->
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+  <ion-slides #slidesRef (ionSlideDidChange)="onSlideMoved($event)" [options]="slideOpts">
+    <ion-slide>
+      <h1># 1</h1>
+      <img src="./assets/images/slide-1.png">
+      <h2>Buddha</h2>
+      <p>Health is the greatest gift, contentment the greatest wealth, faithfulness the best relationship.</p>
+    </ion-slide>
+    <ion-slide>
+      <h1># 2</h1>
+      <img src="./assets/images/slide-2.png">
+      <h2>Yeshi Tsogyal (8 Century)</h2>
+      <p>What we understand to be phenomena. Are but the magical projections of the mind.</p>
+
+    </ion-slide>
+    <ion-slide>
+      <h1># 3</h1>
+      <img src="./assets/images/slide-3.png">
+      <h2>Lord Buddha</h2>
+      <p>What we think, we become.</p>
+    </ion-slide>
+  </ion-slides>
+
+
 </ion-content>
